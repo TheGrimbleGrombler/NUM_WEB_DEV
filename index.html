@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="Assets/NUMWEB.png" />
+    <meta name="description" content="NUM_WEB" />
+
+    <title>NUM_WEB</title>
+
+    <link rel="stylesheet" href="styles/default.css" />
+    <link rel="stylesheet" href="styles/heresy.css" />
+    <link rel="stylesheet" href="styles/ice.css" />
+    <link rel="stylesheet" href="styles/void.css" />
+
+    <script type="module" src="mechaniccode/theme.js"></script>
+    <script type="module" src="break_eternity.js"></script>
+    <script type="module" src="jswip/main.js" defer></script>
+    <script type="module" src="jswip/upgradesV2.js" defer></script>
+    <script type="module" src="jswip/achievements.js" defer></script>
+    <script type="module" src="jswip/buyables.js" defer></script>
+    <script type="module" src="jswip/news.js" defer></script>
+    <script type="module" src="mechaniccode/computation.js" defer></script>
+    <script type="module" src="mechaniccode/resets.js" defer></script>
+    <script type="module" src="mechaniccode/stats.js" defer></script>
+    <script type="module" src="jswip/guihandler.js" defer></script>
+
+
+
+</head>
+  <body id="BODY" style="overflow: hidden;" class="BODY_default">
+    <div style="position: absolute; width: 100vw; height: 100vh; left: 0vw; top: 0vh;" id="MAINDIV" class="MAIN_default">
+      
+      <div id="tabs">
+        
+        <div class="btn_tab ghost default_TABBTN" ><button id="tab0button" onclick="window.TABS.choose('0',false)" class="btn_tabinner">Data</button></div>
+        <div class="btn_tab ghost default_TABBTN" ><button id="tab3button" onclick="window.TABS.choose('3',false)" class="btn_tabinner">Upgrades</button></div>
+        <div class="btn_tab ghost default_TABBTN" ><button id="tab1button" onclick="window.TABS.choose('1',false)" class="btn_tabinner">Stats</button></div>
+        <div class="btn_tab ghost default_TABBTN" ><button id="tab4button" onclick="window.TABS.choose('4',false)" class="btn_tabinner">Achievements</button></div>   
+        <div class="btn_tab ghost default_TABBTN" ><button id="tab2button" onclick="window.TABS.choose('2',false)" class="btn_tabinner">Options</button></div>   
+        
+        <div class="uiborderWhite default_LARGEBORDER" style="z-index: 1; position: absolute; top: 30px; left:200px; width:calc(100vw - 400px); min-top: 30px;"></div>
+        <div class="uiborderWhite default_LARGEBORDER" style="z-index: 1; position: absolute; top: 0px; left:200px; height:100vh; min-left: 200px;"></div>
+        <div class="uiborderWhite default_LARGEBORDER" style="z-index: 1; position: absolute; top: 0px; left:calc(100vw - 200px); height:100vh; min-left: calc(100% - 200px);"></div>
+
+      </div>
+      <div id="stabs" class="table_center">
+        <div id="stabs0" class="table_center" style="display:none">
+          <div id="subtab0div" style="display:block" class="btn_stab ghost table_center" ><button id="subtab0button" onclick="window.TABS.choose('0',true)" class="btn_stabinner default_SUBTABBTNINNER">Main</button></div>
+          <div id="subtab1div" style="display:none" class="btn_stab ghost table_center" ><button id="subtab1button" onclick="window.TABS.choose('1',true)" class="btn_stabinner default_SUBTABBTNINNER">Computation</button></div>
+          <div id="subtab2div" style="display:none" class="btn_stab ghost table_center" ><button id="subtab2button" onclick="window.TABS.choose('2',true)" class="btn_stabinner default_SUBTABBTNINNER">TBD</button></div>
+        </div>
+
+        <div id="stabs1" class="table_center" style="display:none">
+          <div id="subtab3div" style="display:block" class="btn_stab ghost table_center" ><button id="subtab3button" onclick="window.TABS.choose('3',true)" class="btn_stabinner default_SUBTABBTNINNER">Overview</button></div>
+          <div id="subtab4div" style="display:block" class="btn_stab ghost table_center" ><button id="subtab4button" onclick="window.TABS.choose('4',true)" class="btn_stabinner default_SUBTABBTNINNER">Boosts</button></div>
+          <div id="subtab5div" style="display:block" class="btn_stab ghost table_center" ><button id="subtab5button" onclick="window.TABS.choose('5',true)" class="btn_stabinner default_SUBTABBTNINNER">Softcaps</button></div>
+          <div id="subtab6div" style="display:block" class="btn_stab ghost table_center" ><button id="subtab6button" onclick="window.TABS.choose('6',true)" class="btn_stabinner default_SUBTABBTNINNER">Scaling</button></div>
+        </div>
+
+        <div id="stabs2" class="table_center" style="display:none">
+          <div id="subtab8div" style="display:block" class="btn_stab ghost table_center" ><button id="subtab8button" onclick="window.TABS.choose('8',true)" class="btn_stabinner default_SUBTABBTNINNER">General</button></div>
+        </div>
+        
+        <div id="stabs3" class="table_center" style="display:none">
+          <div id="subtab9div" style="display:block" class="btn_stab ghost table_center" ><button id="subtab9button" onclick="window.TABS.choose('9',true)" class="btn_stabinner default_SUBTABBTNINNER">Data</button></div>
+        </div>
+        
+        <div id="stabs4" class="table_center" style="display:none">
+          <div id="subtab10div" style="display:block" class="btn_stab ghost table_center" ><button id="subtab10button" onclick="window.TABS.choose('10',true)" class="btn_stabinner default_SUBTABBTNINNER">General</button></div>
+          <div id="subtab11div" style="display:block" class="btn_stab ghost table_center" ><button id="subtab11button" onclick="window.TABS.choose('11',true)" class="btn_stabinner default_SUBTABBTNINNER">Secret</button></div>
+        </div>
+      </div>
+      
+      <div id="background" class="generalBackgrounddefault">
+        
+        
+        <div id="tab0" class="ghost" style="display: none">
+                  
+          <div id="subtab0" class="ghost" style="display: none">
+            <div id="dataDisplay">Data:<br>AMOUNT</div>
+            <div id="compressordiv" class="btn_buyable ghost default_BUYABLE" style="position: absolute; top: 300px; left: calc(50% - 160px);"><button id="compressor" onclick="window.BUYABLES.buy('compressor','data')" class="btn_buyable buyable unbought default_BUYABLE">BUYABLE_NAME<br>BUYABLE_DESCRIPTION<br>BUYABLE_AMOUNT<br>BUYABLE_EFFECT<br>BUYABLE_COST</button></div>
+            <div id="compounderdiv" class="btn_buyable ghost default_BUYABLE" style="position: absolute; top: 450px; left: calc(50% - 160px);"><button id="compounder" onclick="window.BUYABLES.buy('compounder','data')" class="btn_buyable buyable unbought default_BUYABLE">BUYABLE_NAME<br>BUYABLE_DESCRIPTION<br>BUYABLE_AMOUNT<br>BUYABLE_EFFECT<br>BUYABLE_COST</button></div>
+            <div id="incrementallistdiv" class="btn_buyable ghost default_BUYABLE" style="position: absolute; top: 600px; left: calc(50% - 160px);"><button id="incrementallist" onclick="window.BUYABLES.buy('incrementallist','data')" class="btn_buyable buyable unbought default_BUYABLE">BUYABLE_NAME<br>BUYABLE_DESCRIPTION<br>BUYABLE_AMOUNT<br>BUYABLE_EFFECT<br>BUYABLE_COST</button></div>
+          </div>
+          
+          <div id="subtab1" class="ghost" style="display: none; overflow: hidden;">
+            <div id="spinner" class="spinner spinnerdefault"></div>
+            <div id="spinner2" class="spinner spinnerdefault"></div>
+            <div id="spinner3" class="spinner spinnerdefault"></div>
+            <div id="spinner4" class="spinner spinnerdefault"></div>
+            <div id="spinner5" class="spinner spinnerdefault"></div>
+
+            <div id="computationDisplay">Computation: AMOUNT</div> <br>
+            <div id="significantDataDisplay">Significant Data: AMOUNT</div> <br>
+            <div class="btn_reset ghost default_RESET" style="position: absolute; top: 300px; left: calc(50% - 160px);"><button id="resetComputation" onclick="window.RESETS.reset(0)" class="btn_buyable">Collapse computation for<br>AMOUNT<br>Significant Data</button></div>
+
+            <div id="coProcessordiv" class="btn_buyable ghost default_BUYABLE" style="position: absolute; top: 450px; left: calc(50% - 160px);"><button id="coProcessor" onclick="window.BUYABLES.buy('coProcessor','significantData')" class="btn_buyable buyable unbought default_BUYABLE">BUYABLE_NAME<br>BUYABLE_DESCRIPTION<br>BUYABLE_AMOUNT<br>BUYABLE_EFFECT<br>BUYABLE_COST</button></div>
+            <div id="multithreaderdiv" class="btn_buyable ghost default_BUYABLE" style="position: absolute; top: 600px; left: calc(50% - 160px);"><button id="multithreader" onclick="window.BUYABLES.buy('multithreader','significantData')" class="btn_buyable buyable unbought default_BUYABLE">BUYABLE_NAME<br>BUYABLE_DESCRIPTION<br>BUYABLE_AMOUNT<br>BUYABLE_EFFECT<br>BUYABLE_COST</button></div>
+
+          </div>
+          
+          <div id="subtab2" class="ghost" style="display: none">
+            EXAMPLE TEXT TO SHOW THAT STUFF CHANGES #1_2
+          </div>
+          
+        </div>
+        
+        <div id="tab1" class="ghost" style="display: none">
+             
+          <div id="subtab3" class="ghost" style="display: none">
+            <div id="statsOverview" style="text-align:center; display:default; width:100%; height: 80vh;"><br><br><br><br><br><br><br><br>Select a stat in the right sidebar</div>
+          </div>
+          
+          <div id="subtab4" class="ghost" style="display: none">
+            <div id="statsBoosts" style="text-align:center; display:default; width:100%; height: 80vh;"><br><br><br><br><br><br><br><br>Select a stat in the right sidebar</div>
+
+          </div>
+          
+          <div id="subtab5" class="ghost" style="display: none">
+            <div id="statsSoftcaps" style="text-align:center; display:default; width:100%; height: 80vh;"><br><br><br><br><br><br><br><br>Select a stat in the right sidebar</div>
+
+          </div>
+          
+          <div id="subtab6" class="ghost" style="display: none">
+            <div id="statsScaling" style="text-align:center; display:default; width:100%; height: 80vh;"><br><br><br><br><br><br><br><br>Select a stat in the right sidebar</div>
+
+          </div>
+          
+        </div>
+
+        
+        <div id="tab2" class="ghost" style="display: none">
+          
+          <div id="subtab8" class="ghost" style="display: none">
+            <select name="SITE_THEME" id="SITE_THEME_SELECT">
+              <option value="default" selected>default</option>
+              <option value="heresy">heresy</option>
+              <option value="ice">ice</option>
+              <option value="void">void</option>
+            </select>
+
+          </div>
+          
+        </div>   
+
+        
+        <div id="tab3" class="ghost" style="display: none">
+          
+          <div id="subtab9" class="ghost" style="display: none">
+            
+            <div id="upgradeinfo">UPGRADE NAME<br>UPGRADE DESCRIPTION<br>UPGRADE EFFECT<br>BOUGHT?(BOOL)</div>
+            <tbody id="UpgradesTable1" class="UpgradeTable">
+              <div class="gradient-bar" style="position: relative; top:-9px; height: 1px; width: 100%; left: 0%;"></div>
+              <tr id="Upgrades0">
+                <td>
+                  <image class="upgrade" id="efficiencyI" loading="lazy" onmouseover="window.UPGRADES.display('efficiencyI','main')" onclick="window.UPGRADES.buy('efficiencyI','main')" src="Assets/Eff1.png"></image>
+                </td>
+                <td>
+                  <image class="upgrade" id="efficiencyII" loading="lazy" onmouseover="window.UPGRADES.display('efficiencyII','main')" onclick="window.UPGRADES.buy('efficiencyII','main')" src="Assets/Eff2.png"></image>
+                </td>
+                <td>
+                  <image class="upgrade" id="efficiencyIII" loading="lazy" onmouseover="window.UPGRADES.display('efficiencyIII','main')" onclick="window.UPGRADES.buy('efficiencyIII','main')" src="Assets/Eff3.png"></image>
+                </td>
+                <td>
+                  <image class="upgrade" id="efficiencyIV" loading="lazy" onmouseover="window.UPGRADES.display('efficiencyIV','main')" onclick="window.UPGRADES.buy('efficiencyIV','main')" src="Assets/Eff4.png"></image>
+                </td>
+                <td>
+                  <image class="upgrade" id="efficiencyV" loading="lazy" onmouseover="window.UPGRADES.display('efficiencyV','main')" onclick="window.UPGRADES.buy('efficiencyV','main')" src="Assets/Eff5.png"></image>
+                </td>
+              </tr>
+              <br>
+                      <div class="gradient-bar" style="position: relative; top:9px; height: 1px; width: 100%; left: 0%;"></div>
+              <br>
+              <tr id="Upgrades1">
+                <td>
+                  <image class="upgrade" id="realpowerI" loading="lazy" onmouseover="window.UPGRADES.display('realpowerI','main')" onclick="window.UPGRADES.buy('realpowerI','main')" src="Assets/Rp1.png"></image>
+                </td>
+                <td>
+                  <image class="upgrade" id="realpowerII" loading="lazy" onmouseover="window.UPGRADES.display('realpowerII','main')" onclick="window.UPGRADES.buy('realpowerII','main')" src="Assets/Rp2.png"></image>
+                </td>
+                <td>
+                  <image class="upgrade" id="realpowerIII" loading="lazy" onmouseover="window.UPGRADES.display('realpowerIII','main')" onclick="window.UPGRADES.buy('realpowerIII','main')" src="Assets/Rp3.png"></image>
+                </td>
+                <td>
+                  <image class="upgrade" id="realpowerIV" loading="lazy" onmouseover="window.UPGRADES.display('realpowerIV','main')" onclick="window.UPGRADES.buy('realpowerIV','main')" src="Assets/Rp4.png"></image>
+                </td>
+                <td>
+                  <image class="upgrade" id="realpowerV" loading="lazy" onmouseover="window.UPGRADES.display('realpowerV','main')" onclick="window.UPGRADES.buy('realpowerV','main')" src="Assets/Rp5.png"></image>
+                </td>
+              </tr>
+              <br>
+              <div id="UpgradeSet2" style="display:none">
+                <div class="gradient-bar" style="position: relative; top:9px; height: 1px; width: 100%; left: 0%;"></div>
+                <br>
+                <tr id="Upgrades2">
+                    
+                    <td>
+                      <image class="upgrade" id="capacityI" loading="lazy" onmouseover="window.UPGRADES.display('capacityI','main')" onclick="window.UPGRADES.buy('capacityI','main')" src="Assets/Cap1.png"></image>
+                    </td>
+                    <td>
+                      <image class="upgrade" id="capacityII" loading="lazy" onmouseover="window.UPGRADES.display('capacityII','main')" onclick="window.UPGRADES.buy('capacityII','main')" src="Assets/Cap2.png"></image>
+                    </td>
+                    <td>
+                      <image class="upgrade" id="capacityIII" loading="lazy" onmouseover="window.UPGRADES.display('capacityIII','main')" onclick="window.UPGRADES.buy('capacityIII','main')" src="Assets/Cap3.png"></image>
+                    </td>
+                    <td>
+                      <image class="upgrade" id="capacityIV" loading="lazy" onmouseover="window.UPGRADES.display('capacityIV','main')" onclick="window.UPGRADES.buy('capacityIV','main')" src="Assets/Cap4.png"></image>
+                    </td>
+                    <td>
+                      <image class="upgrade" id="capacityV" loading="lazy" onmouseover="window.UPGRADES.display('capacityV','main')" onclick="window.UPGRADES.buy('capacityV','main')" src="Assets/Cap5.png"></image>
+                    </td>
+
+                </tr>
+              </div>
+            </tbody>
+            
+          </div>
+          
+        </div> 
+        
+        <div id="tab4" class="ghost" style="display: none">
+          
+          <div id="subtab10" class="ghost" style="display: none">
+            
+            <div id="achievementinfo">ACHIEVEMENT NAME<br>DESCRIPTION<br>TIP (IF NEEDED)</div>
+            <tbody id="AchievementMenu1" class="UpgradeTable" style="position: absolute; top: 100px;">
+              <div class="gradient-bar gradient-bar-default" style="position: relative; top:-9px; height: 1px; width: 100%; left: 0%;"></div>
+              <tr>
+                <td>
+                  <image class="achievement unachieved" id="datacollector" loading="lazy" onmouseover="window.ACHIEVEMENTS.display('datacollector','main')" src="Assets/dataCollector1.png"></image>
+                </td>
+                <td>
+                  <image class="achievement unachieved" id="datacollector2" loading="lazy" onmouseover="window.ACHIEVEMENTS.display('datacollector2','main')" src="Assets/dataCollector2.png"></image>
+                </td>
+                <td>
+                  <image class="achievement unachieved" id="datacollector3" loading="lazy" onmouseover="window.ACHIEVEMENTS.display('datacollector3','main')" src="Assets/dataCollector3.png"></image>
+                </td>
+                <td>
+                  <image class="achievement unachieved" id="datacollector4" loading="lazy" onmouseover="window.ACHIEVEMENTS.display('datacollector4','main')" src="Assets/dataCollector4.png"></image>
+                </td>
+                <td>
+                  <image class="achievement unachieved" id="datacollector5" loading="lazy" onmouseover="window.ACHIEVEMENTS.display('datacollector5','main')" src="Assets/dataCollector5.png"></image>
+                </td>
+              </tr>
+                <div class="gradient-bar gradient-bar-default" style="position: relative; top:9px; height: 1px; width: 100%; left: 0%;"></div>
+              <tr>
+                <br>
+                <td>
+                  <image class="achievement unachieved" id="computationSpecialist1" loading="lazy" onmouseover="window.ACHIEVEMENTS.display('computationSpecialist1','main')" src="Assets/computationSpecialist1.png"></image>
+                </td>
+                <td>
+                  <image class="achievement unachieved" id="computationSpecialist2" loading="lazy" onmouseover="window.ACHIEVEMENTS.display('computationSpecialist2','main')" src="Assets/computationSpecialist2.png"></image>
+                </td>
+                <td>
+                  <image class="achievement unachieved" id="computationSpecialist3" loading="lazy" onmouseover="window.ACHIEVEMENTS.display('computationSpecialist3','main')" src="Assets/computationSpecialist3.png"></image>
+                </td>
+                <td>
+                  <image class="achievement unachieved" id="computationSpecialist4" loading="lazy" onmouseover="window.ACHIEVEMENTS.display('computationSpecialist4','main')" src="Assets/computationSpecialist4.png"></image>
+                </td>
+                <td>
+                  <image class="achievement unachieved" id="computationSpecialist5" loading="lazy" onmouseover="window.ACHIEVEMENTS.display('computationSpecialist5','main')" src="Assets/computationSpecialist5.png"></image>
+                </td>
+              </tr>
+                <div class="gradient-bar gradient-bar-default" style="position: relative; top:9px; height: 1px; width: 100%; left: 0%;"></div>
+              
+            </tbody>
+            
+          </div>
+          
+          <div id="subtab11" class="ghost" style="display: none">
+            
+          </div>
+          
+        </div>        
+      </div>
+      
+      <div id="newsFrame">
+        
+        <div id="newsText">
+          
+        </div>
+        
+      </div>
+      
+      <div id="sidebarRight">
+
+        <image onclick="window.AUTODISPLAY('data')" class="resourceDisplay" style="z-index: 1; position: absolute; top: 5px; left:calc(100vw - 34px); height:32px; width:32px; min-left: calc(100% - 34px);" id="resourceData" loading="lazy" src="Assets/Data.png"></image>
+        <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 5px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;">Data:</div>
+        <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 21px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;" id="primaryDisplayData">NUMBER</div>
+
+        <div id="displayCluster0" style="display:block">
+
+          <image onclick="window.AUTODISPLAY('computation')" class="resourceDisplay" style="z-index: 1; position: absolute; top: 42px; left:calc(100vw - 37px); height:32px; width:32px; min-left: calc(100% - 37px);" id="resourceComputation" loading="lazy" src="Assets/Computation.png"></image>
+          <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 42px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;">Computation:</div>
+          <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 58px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;" id="primaryDisplayComputation">NUMBER</div>
+
+          <image onclick="window.AUTODISPLAY('significantData')" class="resourceDisplay" style="z-index: 1; position: absolute; top: 79px; left:calc(100vw - 37px); height:32px; width:32px; min-left: calc(100% - 37px);" id="resourceSignificantData" loading="lazy" src="Assets/SignificantData.png"></image>
+          <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 79px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;">Significant Data:</div>
+          <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 95px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;" id="primaryDisplaySignificantData">NUMBER</div>
+
+        </div>
+
+      </div>
+      
+    </div>
+    
+    
+  </body>
+</html>
+  

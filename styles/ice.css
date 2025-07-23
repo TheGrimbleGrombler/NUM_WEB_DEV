@@ -1,0 +1,161 @@
+ice_BUYABLE {
+    border: rgb(0, 174, 255) 1px;
+    color: rgb(255,255,255);
+}
+.ice_BUYABLE .canbuy {
+    background-color: rgb(0, 155, 96);
+}
+.ice_BUYABLE .bought {
+    background-color: rgb(0, 146, 156);
+}
+.ice_BUYABLE .unbought {
+    background-color: rgb(0, 20, 43);
+}
+
+.ice_UPGRADE.bought {
+  background-color: rgb(0, 146, 156);
+}
+.ice_UPGRADE.unbought {
+  background-color: rgb(0, 20, 43);
+}
+.ice_UPGRADE.canbuy {
+  background-color: rgb(0, 155, 96);
+}
+.ice_UPGRADE:hover {
+  box-shadow: 0 0 8px 2px rgba(0, 146, 156, 0.5);
+  transition-duration: 250ms;
+  width: 48px;
+  height: auto;
+  vertical-align: middle;
+}
+.ice_UPGRADE:not(:hover) {
+  box-shadow: 0 0 0px 0px rgba(0, 20, 43, 0.5);
+  transition-duration: 1000ms;
+  width: 32px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.BODYice {
+    font-family: "Monaco", Monospace;
+    background-color: rgb(0, 11, 14);    
+}
+
+.ice_LARGEBORDER {
+  border: 1px solid rgb(0, 146, 156);
+  box-shadow: 0 0 2px 0px rgb(0, 146, 156);
+}
+
+.MAIN_ice {
+    font-family: "Monaco", Monospace;
+}
+
+.ice_RESET:hover {
+	background-color: #440000;
+  transition-duration: 250ms;
+}
+.ice_RESET:not(:hover) {
+	background-color: #000000;
+  transition-duration: 250ms;
+}
+
+.ice_TABBTN {
+  text-align: left;
+  padding-left: 3px;
+	width: calc(100% - 1px);
+	min-height: 40px;
+  border: 0px solid;
+  border-color: rgb(0, 146, 156);
+  background-color:rgb(0, 11, 14);  
+}
+.ice_SUBTABBTN {
+  text-align: center;
+  padding-bottom: 3px;
+	height: calc(100% - 1px);
+	min-width: 160px;
+  width: 160px;
+  border: 0px solid;
+  border-color: rgb(0, 146, 156);
+  background-color:rgb(0, 11, 14);  
+  z-index: 200;
+}
+.ice_TABBTNINNER {
+  text-align: left;
+  padding-left: 3px;
+	width: calc(100% - 1px);
+	min-height: 40px;
+  border: 1px solid;
+  border-color: rgb(0, 146, 156);
+  background-color:rgba(0,0,0,0);
+}
+.ice_SUBTABBTNINNER {
+  text-align: center;
+  padding-bottom: 3px;
+	height: calc(100% - 1px);
+	min-width: 160px;
+  width: 160px;
+  border: 1px solid;
+  border-color: rgb(0, 146, 156);
+  background-color: rgba(0,0,0,0);
+  z-index: 200;
+}
+
+.spinnerice {
+  background-image:
+  radial-gradient(rgba(0, 146, 156, 0.3), rgba(0, 146, 156, 0.05) 1px, transparent 80px);
+}
+
+.ice_SUBTABBTNINNER:hover {
+	background-color: #004049;
+  transition-duration: 250ms;
+}
+.ice_SUBTABBTNINNER:not(:hover) {
+	background-color: rgb(0, 11, 14);  
+  transition-duration: 250ms;
+}
+.ice_SUBTABBTNINNER.chosen {
+  border-bottom-width: 10px;
+  transition-duration: 250ms;
+}
+.ice_SUBTABBTNINNER:not(chosen) {
+  border-bottom-width: 1px;
+  transition-duration: 250ms;
+}
+
+.ice_TABBTNINNER:hover {
+	background-color: rgb(0, 92, 99);
+  transition-duration: 250ms;
+}
+.ice_TABBTNINNER:not(:hover) {
+	background-color: rgb(0, 11, 14);  
+  transition-duration: 250ms;
+}
+.ice_TABBTNINNER.chosen {
+  border-left-width: 10px;
+  transition-duration: 250ms;
+}
+.ice_TABBTNINNER:not(chosen) {
+  border-bottom-width: 1px;
+  transition-duration: 250ms;
+}
+
+.generalBackgroundice {
+  
+  overflow: hidden;
+  z-index: 0;
+  width: calc(100% - 400px);
+  height: calc(100vh - 30px);
+  left: 200px;
+  top: 30px;
+  background-color: rgb(0, 11, 14);
+  background-image: repeating-linear-gradient(90deg, transparent, transparent 1%, rgba(0, 25, 32, 0.5) 2%);
+  position: absolute;
+  
+}
+
+.gradient-bar-ice {
+    height: 1px;
+    background: radial-gradient(circle, rgb(0, 146, 156) 0%, rgba(0, 146, 156, 0) 60%);
+    border-radius: 2px;
+    box-shadow: 0 4px 10px rgba(0, 11, 14);
+}

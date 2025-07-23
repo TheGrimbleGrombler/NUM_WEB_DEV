@@ -1,0 +1,169 @@
+.heresy_BUYABLE {
+    border: rgb(255,0,0) 1px;
+    color: rgb(255,255,255);
+}
+.heresy_BUYABLE .canbuy {
+    background-color: rgb(155,50,0);
+}
+.heresy_BUYABLE .bought {
+    background-color: rgb(156, 0, 0);
+}
+.heresy_BUYABLE .unbought {
+    background-color: rgb(70, 45, 0);
+}
+.heresy_BUYABLE:hover {
+	background-color: #444444;
+  transition-duration: 250ms;
+}
+.heresy_BUYABLES:not(:hover) {
+	background-color: #000000;
+    transition-duration: 250ms;
+}
+
+.heresy_UPGRADE.bought {
+  background-color: rgb(156, 0, 0);
+}
+.heresy_UPGRADE.unbought {
+  background-color: rgb(70, 45, 0);
+}
+.heresy_UPGRADE.canbuy {
+  background-color: rgb(155,50,0);
+}
+.heresy_UPGRADE:hover {
+  box-shadow: 0 0 8px 2px rgba(255, 0, 0, 0.5);
+  transition-duration: 250ms;
+  width: 48px;
+  height: auto;
+  vertical-align: middle;
+}
+.heresy_UPGRADE:not(:hover) {
+  box-shadow: 0 0 0px 0px rgba(121, 0, 0, 0.5);
+  transition-duration: 1000ms;
+  width: 32px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.BODYheresy {
+    font-family: "Monaco", Monospace;
+    background-color: rgb(14, 0, 0);    
+}
+
+.heresy_LARGEBORDER {
+  border: 1px solid rgb(255, 0, 0);
+  box-shadow: 0 0 2px 0px rgb(255, 0, 0);
+}
+
+.MAIN_heresy {
+    font-family: "Monaco", Monospace;
+}
+
+.heresy_RESET:hover {
+	background-color: #440000;
+  transition-duration: 250ms;
+}
+.heresy_RESET:not(:hover) {
+	background-color: #000000;
+  transition-duration: 250ms;
+}
+
+.heresy_TABBTN {
+  text-align: left;
+  padding-left: 3px;
+	width: calc(100% - 1px);
+	min-height: 40px;
+  border: 0px solid;
+  border-color: #ff0000;
+  background-color:#180000;
+}
+.heresy_SUBTABBTN {
+  text-align: center;
+  padding-bottom: 3px;
+	height: calc(100% - 1px);
+	min-width: 160px;
+  width: 160px;
+  border: 0px solid;
+  border-color: #ff0000;
+  background-color:#180000;
+  z-index: 200;
+}
+.heresy_TABBTNINNER {
+  text-align: left;
+  padding-left: 3px;
+	width: calc(100% - 1px);
+	min-height: 40px;
+  border: 1px solid;
+  border-color: #ff0000;
+  background-color:rgba(0,0,0,0);
+}
+.heresy_SUBTABBTNINNER {
+  text-align: center;
+  padding-bottom: 3px;
+	height: calc(100% - 1px);
+	min-width: 160px;
+  width: 160px;
+  border: 1px solid;
+  border-color: #ff0000;
+  background-color: rgba(0,0,0,0);
+  z-index: 200;
+}
+
+.spinnerheresy {
+  background-image:
+  radial-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.05) 1px, transparent 80px);
+}
+
+.heresy_SUBTABBTNINNER:hover {
+	background-color: #490000;
+  transition-duration: 250ms;
+}
+.heresy_SUBTABBTNINNER:not(:hover) {
+	background-color: #180000;
+  transition-duration: 250ms;
+}
+.heresy_SUBTABBTNINNER.chosen {
+  border-bottom-width: 10px;
+  transition-duration: 250ms;
+}
+.heresy_SUBTABBTNINNER:not(chosen) {
+  border-bottom-width: 1px;
+  transition-duration: 250ms;
+}
+
+.heresy_TABBTNINNER:hover {
+	background-color: #490000;
+  transition-duration: 250ms;
+}
+.heresy_TABBTNINNER:not(:hover) {
+	background-color: #180000;
+  transition-duration: 250ms;
+}
+.heresy_TABBTNINNER.chosen {
+  border-left-width: 10px;
+  transition-duration: 250ms;
+}
+.heresy_TABBTNINNER:not(chosen) {
+  border-bottom-width: 1px;
+  transition-duration: 250ms;
+}
+
+.generalBackgroundheresy {
+  
+  overflow: hidden;
+  z-index: 0;
+  width: calc(100% - 400px);
+  height: calc(100vh - 30px);
+  left: 200px;
+  top: 30px;
+  background-color: rgb(15,0,0);
+  background-image: repeating-linear-gradient(90deg, transparent, transparent 1%, rgba(30,0,0,.5) 2%);
+  position: absolute;
+  
+}
+
+.gradient-bar-heresy {
+    height: 1px;
+    background: radial-gradient(circle, rgb(255, 0, 0) 0%, rgba(255, 0, 0, 0) 60%);
+    border-radius: 2px;
+    box-shadow: 0 4px 10px rgba(10, 0, 0, 0.5);
+}

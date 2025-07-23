@@ -1,0 +1,169 @@
+.void_BUYABLE {
+    border: rgb(255, 255, 255) 1px;
+    color: rgb(255,255,255);
+}
+.void_BUYABLE .canbuy {
+    background-color: rgb(29, 29, 29);
+}
+.void_BUYABLE .bought {
+    background-color: rgb(71, 71, 71);
+}
+.void_BUYABLE .unbought {
+    background-color: rgb(0, 0, 0);
+}
+.void_BUYABLE:hover {
+	background-color: #222222;
+  transition-duration: 250ms;
+}
+.void_BUYABLE:not(:hover) {
+	background-color: #000000;
+    transition-duration: 250ms;
+}
+
+.void_UPGRADE.bought {
+  background-color: rgb(75, 75, 75);
+}
+.void_UPGRADE.unbought {
+  background-color: rgb(0, 0, 0);
+}
+.void_UPGRADE.canbuy {
+  background-color: rgb(29, 29, 29);
+}
+.void_UPGRADE:hover {
+  box-shadow: 0 0 8px 2px rgba(17, 17, 17, 0.5);
+  transition-duration: 250ms;
+  width: 48px;
+  height: auto;
+  vertical-align: middle;
+}
+.void_UPGRADE:not(:hover) {
+  box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.5);
+  transition-duration: 1000ms;
+  width: 32px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.BODYvoid {
+    font-family: "Monaco", Monospace;
+    background-color: rgb(0, 0, 0);    
+}
+
+.void_LARGEBORDER {
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 0 2px 0px rgb(0, 0, 0);
+}
+
+.MAIN_void {
+    font-family: "Lucida Console", Monospace;
+}
+
+.void_RESET:hover {
+	background-color: #383838;
+  transition-duration: 250ms;
+}
+.void_RESET:not(:hover) {
+	background-color: #000000;
+  transition-duration: 250ms;
+}
+
+.void_TABBTN {
+  text-align: left;
+  padding-left: 3px;
+	width: calc(100% - 1px);
+	min-height: 40px;
+  border: 0px solid;
+  border-color: #ffffff;
+  background-color:#000000;
+}
+.void_SUBTABBTN {
+  text-align: center;
+  padding-bottom: 3px;
+	height: calc(100% - 1px);
+	min-width: 160px;
+  width: 160px;
+  border: 0px solid;
+  border-color: #ffffff;
+  background-color:#000000;
+  z-index: 200;
+}
+.void_TABBTNINNER {
+  text-align: left;
+  padding-left: 3px;
+	width: calc(100% - 1px);
+	min-height: 40px;
+  border: 1px solid;
+  border-color: #ffffff;
+  background-color:rgba(0,0,0,0);
+}
+.void_SUBTABBTNINNER {
+  text-align: center;
+  padding-bottom: 3px;
+	height: calc(100% - 1px);
+	min-width: 160px;
+  width: 160px;
+  border: 1px solid;
+  border-color: #ffffff;
+  background-color: rgba(0,0,0,0);
+  z-index: 200;
+}
+
+.spinnervoid {
+  background-image:
+  radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05) 1px, transparent 80px);
+}
+
+.void_SUBTABBTNINNER:hover {
+	background-color: #202020;
+  transition-duration: 250ms;
+}
+.void_SUBTABBTNINNER:not(:hover) {
+	background-color: #000000;
+  transition-duration: 250ms;
+}
+.void_SUBTABBTNINNER.chosen {
+  border-bottom-width: 10px;
+  transition-duration: 250ms;
+}
+.void_SUBTABBTNINNER:not(chosen) {
+  border-bottom-width: 1px;
+  transition-duration: 250ms;
+}
+
+.void_TABBTNINNER:hover {
+	background-color: #222222;
+  transition-duration: 250ms;
+}
+.void_TABBTNINNER:not(:hover) {
+	background-color: #000000;
+  transition-duration: 250ms;
+}
+.void_TABBTNINNER.chosen {
+  border-left-width: 10px;
+  transition-duration: 250ms;
+}
+.void_TABBTNINNER:not(chosen) {
+  border-bottom-width: 1px;
+  transition-duration: 250ms;
+}
+
+.generalBackgroundvoid {
+  
+  overflow: hidden;
+  z-index: 0;
+  width: calc(100% - 400px);
+  height: calc(100vh - 30px);
+  left: 200px;
+  top: 30px;
+  background-color: rgb(0, 0, 0);
+  background-image: repeating-linear-gradient(90deg, transparent, transparent 1%, rgba(14, 14, 14, 0.5) 2%);
+  position: absolute;
+  
+}
+
+.gradient-bar-void {
+    height: 1px;
+    background: radial-gradient(circle, rgb(117, 117, 117) 0%, rgba(24, 24, 24, 0) 60%);
+    border-radius: 2px;
+    box-shadow: 0 4px 10px rgba(10, 10, 10, 0.5);
+}
