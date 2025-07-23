@@ -21,12 +21,20 @@ var DDown = false;
 
 var timespeed = E("1")
 
-window.format = function(n,e) {
-  
-  if (n.log(E("10")).gte(E("6"))) { // Enforce scientific notation
-    return E(String( n.div(E("10").pow(n.log(E("10")).floor())).mul(E("100")).floor().div(E("100")) ) + "e" + String( n.log(E("10")).floor() ))
+window.format = function(m,e) {
+  var n = m.toFixed(e)
+
+  var mag = n.log(E("10"))
+  var base = n.div(E("10").pow(mag.floor()))
+
+  if (mag.gte(E("6"))) {
+    var basestr = String(base)
+    if (basestr.length < 4) {
+      basestr = basestr.padEnd(2,".").padEnd(4, "0");
+    }
+    return basestr.slice(0,4) + "e" + String(mag)
   } else {
-    return n.toFixed(e)
+    return String(base.floor())
   }
   
 }
@@ -41,7 +49,13 @@ window.player = {
   computationMax: E("1e5"),
   computationBest: E("0"),
   significantData: E("0"),
-  significantDataBest: E("0")
+  significantDataBest: E("0"),
+  circa: E("0"),
+  forma: E("0"),
+  entra: E("0"),
+  circaBest: E("0"),
+  formaBest: E("0"),
+  entraBest: E("0")
 };
 
 var player = window.player
@@ -60,16 +74,22 @@ function unNaN() {
     if (isNaN(window.BUYABLES[n][m].bought)) {window.BUYABLES.data[m].bought = E("0")}
   }
   
-  if (isNaN(player.data)) {player.data = E("0")}
-  if (isNaN(player.dataBest)) {player.dataBest = E("0")}
-  if (isNaN(player.simulationTier)) {player.simulationTier = E("0")}
-  if (isNaN(player.simulationTierBest)) {player.simulationTierBest = E("0")}
-  if (isNaN(player.progression)) {player.progression = 1}
-  if (isNaN(player.computation)) {player.computation = E("0")}
-  if (isNaN(player.computationBest)) {player.computationBest = E("0")}
-  if (isNaN(player.significantData)) {player.significantData = E("0")}
-  if (isNaN(player.significantDataBest)) {player.significantDataBest = E("0")}
-  if (isNaN(player.computationMax)) {player.computationMax = E("1e5")}
+  //if (isNaN(player.data)) {player.data = E("0")}
+  //if (isNaN(player.dataBest)) {player.dataBest = E("0")}
+  //if (isNaN(player.simulationTier)) {player.simulationTier = E("0")}
+  //if (isNaN(player.simulationTierBest)) {player.simulationTierBest = E("0")}
+  //if (isNaN(player.progression)) {player.progression = 1}
+  //if (isNaN(player.computation)) {player.computation = E("0")}
+  //if (isNaN(player.computationBest)) {player.computationBest = E("0")}
+  //if (isNaN(player.significantData)) {player.significantData = E("0")}
+  //if (isNaN(player.significantDataBest)) {player.significantDataBest = E("0")}
+  //if (isNaN(player.computationMax)) {player.computationMax = E("1e5")}
+  //if (isNaN(player.circa)) {player.circa = E("0")}
+  //if (isNaN(player.circaBest)) {player.circaBest = E("0")}
+  //if (isNaN(player.entra)) {player.entra = E("0")}
+  //if (isNaN(player.entraBest)) {player.entraBest = E("0")}
+  //if (isNaN(player.forma)) {player.forma = E("0")}
+  //if (isNaN(player.formaBest)) {player.formaBest = E("0")}
   
   checkbuyable("compressor","data")
   checkbuyable("compounder","data")
@@ -98,8 +118,13 @@ var automation2 = true
 function checkbest() {
   if (player.data.gte(player.dataBest)) {player.dataBest = player.data}
   if (player.simulationTier.gte(player.simulationTierBest)) {player.simulationTierBest = player.simulationTier}
+
   if (player.computation.gte(player.computationBest)) {player.computationBest = player.computation}
   if (player.significantData.gte(player.significantDataBest)) {player.significantDataBest = player.significantData}
+
+  if (player.circa.gte(player.circaBest)) {player.circaBest = player.circa}
+  if (player.forma.gte(player.formaBest)) {player.formaBest = player.forma}
+  if (player.entra.gte(player.entraBest)) {player.entraBest = player.entra}
 }
 
 function scrollgui() {
@@ -132,6 +157,8 @@ function updateprogression() {
   var buys = window.BUYABLES
   
   if (upgs.main.realpowerV.bought) {progression = 2}
+
+  if (upgs.main.capacityV.bought) {progression = 3}
   
   if (window.player.progression < progression) {window.player.progression = progression}
   
@@ -222,19 +249,27 @@ function wipe() {
 }
 
 function load() {
+  function loadstat(data,statname) {
+    var data = E(String(data.player[statname]))
+    if (typeof data !== "object") {player[statname] = E("0")} else {player[statname] = data}
+  }
   const loadedData = JSON.parse(localStorage.getItem('gameData'));
   if (loadedData) {
     
-    player.data = E(String(loadedData.player.data));
-    player.dataBest = E(String(loadedData.player.dataBest));
-    player.simulationTier = E(String(loadedData.player.simulationTier));
-    player.simulationTierBest = E(String(loadedData.player.simulationTierBest));
-    player.computation = E(String(loadedData.player.computation));
-    player.computationMax = E(String(loadedData.player.computationMax));
-    player.computationBest = E(String(loadedData.player.computationBest));
-    player.significantData = E(String(loadedData.player.significantData));
-    player.significantDataBest = E(String(loadedData.player.significantDataBest));
-    
+    var playerkeys = Object.keys(player)
+    for(var i = 0; i < playerkeys.length; i+=1) {
+      loadstat(loadedData,playerkeys[i])
+    }
+    //player.data = E(String(loadedData.player.data));
+    //player.dataBest = E(String(loadedData.player.dataBest));
+    //player.simulationTier = E(String(loadedData.player.simulationTier));
+    //player.simulationTierBest = E(String(loadedData.player.simulationTierBest));
+    //player.computation = E(String(loadedData.player.computation));
+    //player.computationMax = E(String(loadedData.player.computationMax));
+    //player.computationBest = E(String(loadedData.player.computationBest));
+    //player.significantData = E(String(loadedData.player.significantData));
+    //player.significantDataBest = E(String(loadedData.player.significantDataBest));
+
     Lformat("efficiencyI","main",loadedData.upg0_1)
     Lformat("efficiencyII","main",loadedData.upg0_2)
     Lformat("efficiencyIII","main",loadedData.upg0_3)

@@ -21,6 +21,7 @@
     <script type="module" src="jswip/buyables.js" defer></script>
     <script type="module" src="jswip/news.js" defer></script>
     <script type="module" src="mechaniccode/computation.js" defer></script>
+    <script type="module" src="mechaniccode/triphase.js" defer></script>
     <script type="module" src="mechaniccode/resets.js" defer></script>
     <script type="module" src="mechaniccode/stats.js" defer></script>
     <script type="module" src="jswip/guihandler.js" defer></script>
@@ -48,7 +49,7 @@
         <div id="stabs0" class="table_center" style="display:none">
           <div id="subtab0div" style="display:block" class="btn_stab ghost table_center" ><button id="subtab0button" onclick="window.TABS.choose('0',true)" class="btn_stabinner default_SUBTABBTNINNER">Main</button></div>
           <div id="subtab1div" style="display:none" class="btn_stab ghost table_center" ><button id="subtab1button" onclick="window.TABS.choose('1',true)" class="btn_stabinner default_SUBTABBTNINNER">Computation</button></div>
-          <div id="subtab2div" style="display:none" class="btn_stab ghost table_center" ><button id="subtab2button" onclick="window.TABS.choose('2',true)" class="btn_stabinner default_SUBTABBTNINNER">TBD</button></div>
+          <div id="subtab2div" style="display:none" class="btn_stab ghost table_center" ><button id="subtab2button" onclick="window.TABS.choose('2',true)" class="btn_stabinner default_SUBTABBTNINNER">Tri-Phase</button></div>
         </div>
 
         <div id="stabs1" class="table_center" style="display:none">
@@ -298,6 +299,22 @@
           <image onclick="window.AUTODISPLAY('significantData')" class="resourceDisplay" style="z-index: 1; position: absolute; top: 79px; left:calc(100vw - 37px); height:32px; width:32px; min-left: calc(100% - 37px);" id="resourceSignificantData" loading="lazy" src="Assets/SignificantData.png"></image>
           <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 79px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;">Significant Data:</div>
           <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 95px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;" id="primaryDisplaySignificantData">NUMBER</div>
+
+        </div>
+        
+        <div id="displayCluster1" style="display:block">
+
+          <image onclick="window.AUTODISPLAY('circa')" class="resourceDisplay" style="z-index: 1; position: absolute; top: 116px; left:calc(100vw - 37px); height:32px; width:32px; min-left: calc(100% - 37px);" id="resourceCirca" loading="lazy" src="Assets/circa.png"></image>
+          <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 116px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;">Circa:</div>
+          <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 132px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;" id="primaryDisplayCirca">NUMBER</div>
+
+          <image onclick="window.AUTODISPLAY('forma')" class="resourceDisplay" style="z-index: 1; position: absolute; top: 153px; left:calc(100vw - 37px); height:32px; width:32px; min-left: calc(100% - 37px);" id="resourceForma" loading="lazy" src="Assets/forma.png"></image>
+          <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 153px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;">Forma:</div>
+          <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 169px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;" id="primaryDisplayForma">NUMBER</div>
+
+          <image onclick="window.AUTODISPLAY('entra')" class="resourceDisplay" style="z-index: 1; position: absolute; top: 190px; left:calc(100vw - 37px); height:32px; width:32px; min-left: calc(100% - 37px);" id="resourceEntra" loading="lazy" src="Assets/entra.png"></image>
+          <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 190px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;">Entra:</div>
+          <div style="font-size: 12px; text-align: right; z-index: 1; position: absolute; top: 206px; left:calc(100vw - 187px); height:16px; min-left: calc(100% - 187px); width:145px;" id="primaryDisplayEntra">NUMBER</div>
 
         </div>
 

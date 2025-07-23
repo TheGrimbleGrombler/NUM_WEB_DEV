@@ -14,6 +14,7 @@ const bya = window.BUYABLES
 const player = window.player
 const resets = window.RESETS
 const stats = window.STATINDEX
+const triphase = window.TRIPHASE
 
 const format = window.format
 var upgradeinfo = document.getElementById("upgradeinfo")
@@ -45,7 +46,7 @@ function UPDATE() {
 
                   var nam = upgrade.displayName
                   var desc = upgrade.description
-                  var effdisplay = upgrade.effectPrefix + String(window.format(upgrade.effect(),5)) + upgrade.effectSuffix
+                  var effdisplay = upgrade.effectPrefix + format(upgrade.effect(),5) + upgrade.effectSuffix
                   var costdisplay = null
                   if (bought == false) {
                     costdisplay = "Cost: " + String(upgrade.costAmount()) + " " + upgrade.costType
@@ -87,7 +88,7 @@ function UPDATE() {
       if (chosenS != null) {
         if (chosenS.id == "subtab0") {
           
-          document.getElementById("dataDisplay").innerHTML = "Data:<br>" + String(format(player.data,5))
+          document.getElementById("dataDisplay").innerHTML = "Data:<br>" + format(player.data,5)
           bya.update("compressor","data")
           bya.update("compounder","data")
           bya.update("incrementallist","data")
@@ -97,8 +98,8 @@ function UPDATE() {
 
           //resetComputation" onclick="window.RESETS.reset(0)" class="btn_buyable buyable unbought">Collapse computation for<br>AMOUNT<br>Significant Data</button></div>
 
-          document.getElementById("computationDisplay").innerHTML = "Computation: " + String(format(player.computation,5))
-          document.getElementById("significantDataDisplay").innerHTML = "Significant Data: " + String(format(player.significantData,5))
+          document.getElementById("computationDisplay").innerHTML = "Computation: " + format(player.computation,5)
+          document.getElementById("significantDataDisplay").innerHTML = "Significant Data: " + format(player.significantData,5)
           
           document.getElementById("resetComputation").innerHTML = "Collapse Computation for:<br>" + format(resets.calculateReturn(0),1) + "<br>Significant Data"
           
@@ -111,21 +112,25 @@ function UPDATE() {
     
   }
 
-  document.getElementById("primaryDisplayData").innerHTML = String(player.data.toFixed(5))
+  document.getElementById("primaryDisplayData").innerHTML = format(player.data,5)
   if (plrprogression >= 2) {
     document.getElementById("displayCluster0").style.display = "block"
-    document.getElementById("primaryDisplayComputation").innerHTML = String(player.computation.toFixed(5))
-    document.getElementById("primaryDisplaySignificantData").innerHTML = String(player.significantData.toFixed(5))
+    document.getElementById("primaryDisplayComputation").innerHTML = format(player.computation,5)
+    document.getElementById("primaryDisplaySignificantData").innerHTML = format(player.significantData,5)
 
     document.getElementById("subtab1div").style.display = "block"
     document.getElementById("UpgradeSet2").style.display = "block"
   } else {
     document.getElementById("displayCluster0").style.display = "none"
 
-        document.getElementById("subtab1div").style.display = "none"
-        document.getElementById("UpgradeSet2").style.display = "none"
+      document.getElementById("subtab1div").style.display = "none"
+      document.getElementById("UpgradeSet2").style.display = "none"
   }
-  document.getElementById("subtab2div").style.display = "none"
+  if (plrprogression >= 3) {
+    document.getElementById("subtab2div").style.display = "true"
+  } else {
+    document.getElementById("subtab2div").style.display = "none"
+  }
 
 }
 
