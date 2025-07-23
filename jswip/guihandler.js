@@ -127,8 +127,10 @@ function UPDATE() {
       document.getElementById("UpgradeSet2").style.display = "none"
   }
   if (plrprogression >= 3) {
-    document.getElementById("subtab2div").style.display = "true"
+    document.getElementById("displayCluster1").style.display = "block"
+    document.getElementById("subtab2div").style.display = "block"
   } else {
+    document.getElementById("displayCluster1").style.display = "none"
     document.getElementById("subtab2div").style.display = "none"
   }
 
