@@ -24,7 +24,7 @@ var timespeed = E("1")
 window.format = function(m,e) {
   var n = m.toFixed(e)
 
-  var mag = n.log(E("10"))
+  var mag = n.log10()
   var base = n.div(E("10").pow(mag.floor()))
 
   if (mag.gte(E("6"))) {
@@ -250,8 +250,13 @@ function wipe() {
 
 function load() {
   function loadstat(data,statname) {
-    var data = E(String(data.player[statname]))
-    if (typeof data !== "object") {player[statname] = E("0")} else {player[statname] = data}
+    var raw = data.player[statname]
+    if (String(raw) == "undefined") {player[statname] = E("0")} else {
+      if (statname == "progression") { player[statname] = parseInt(raw) } else {
+        var converted = E(raw)
+        player[statname] = converted
+      }
+    }
   }
   const loadedData = JSON.parse(localStorage.getItem('gameData'));
   if (loadedData) {
