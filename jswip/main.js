@@ -21,9 +21,7 @@ var DDown = false;
 
 var timespeed = E("1")
 
-window.format = function(m,e) {
-  var n = m.toFixed(e)
-
+window.format = function(n,e) {
   var mag = n.log10()
   var base = n.div(E("10").pow(mag.floor()))
 
@@ -34,7 +32,7 @@ window.format = function(m,e) {
     }
     return basestr.slice(0,4) + "e" + String(mag)
   } else {
-    return String(base.floor())
+    return base.floor().toString()
   }
   
 }
